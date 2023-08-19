@@ -4,7 +4,7 @@ module.exports = async () => {
     try {
         const connectionParams = {
             useNewUrlParser : true,
-            useCreateIndex : true,
+            // useCreateIndex : true,
             useUnifiedTopology : true
         };
         await mongoose.connect(
@@ -13,7 +13,7 @@ module.exports = async () => {
         );
         console.log('Connected to Database.')
 
-    } catch (err) {
+    } catch (error) {
         console.log('Could not connect to database.',error);
     }
 }

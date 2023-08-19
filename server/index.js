@@ -1,14 +1,14 @@
-const tasks = require("./routes/task")
+const tasks = require("./routes/task");
 const connection = require("./db");
 const express = require("express");
 const cors = require("cors");
-const app =express;
+const app = express(); // You need to invoke the express function here
 
 connection();
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/tasks",tasks)
+app.use("/api/tasks", tasks);
 
-const port = process.env.PORT || 8080 ;
-app.listion(port,()=> console.log(`server listining on port ${port}...`));
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`server listening on port ${port}...`));
